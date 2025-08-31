@@ -20,22 +20,22 @@
       const taskText = input.value.trim();
       if (taskText === '') return;
 
-      const li = document.createElement('li');
-      li.textContent = taskText;
+      const list = document.createElement('li');
+      list.textContent = taskText;
 
-      li.addEventListener('click', () => {
-        li.style.textDecoration = li.style.textDecoration === 'line-through' ? '' : 'line-through';
+      list.addEventListener('click', () => {
+        list.style.textDecoration = list.style.textDecoration === 'line-through' ? '' : 'line-through';
       });
 
       const deleteBtn = document.createElement('button');
       deleteBtn.textContent = 'Delete';
       deleteBtn.style.marginLeft = '10px';
       deleteBtn.addEventListener('click', () => {
-        li.remove();
+        list.remove();
       });
 
-      li.appendChild(deleteBtn);
-      taskList.appendChild(li);
+      list.appendChild(deleteBtn);
+      taskList.appendChild(list);
 
       input.value = ' '; 
       input.focus();
